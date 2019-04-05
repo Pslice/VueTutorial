@@ -6,10 +6,6 @@ var app = new Vue({
         image:'./assets/vmSocks-green.jpg',
         inventory:8,
         inStock:true,
+        details:['','',''],
     }
 });
-
-
-function ConvertToInch(value, unit){
-    
-}
