@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale">
+<meta name="viewport" content="width=device-width">
 <title>Vue Mastery Socks</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -16,16 +16,22 @@
         </div>
         
         <div class="product-info">
-            <h1>{{ product }}</h1>
+            <h1>{{ title }}</h1>
             <p v-if="inStock">In Stock</p>
             <p v-else>Out of Stock</p>
             <ul>
                 <li v-for="detail in details">{{ detail }}</li>
             </ul>
-            <div v-for="variant in variants" :key="variantID">
-                <p @mouseover="updateProduct(variant.variantImage)">{{ variant.variantColor }}</p><!--@ is shorthand for v-on-->
+            <div v-for="(variant, index) in variants" 
+                :key="variantID"
+                class="color-box"
+                :style="{ backgroundColor: variant.variantColor }"
+                @mouseover="updateProduct(index)"><!--@ is shorthand for v-on and : is a bind-->
             </div>
-            <button v-on:click="addToCart">Add to Cart</button>
+            <button v-on:click="addToCart" 
+                    :disabled="!inStock"
+                    :class="{ disabledButton: !inStock }"
+            >Add to Cart</button>
 
             <div class="cart">
                 <p>Cart({{cart}})</p>
