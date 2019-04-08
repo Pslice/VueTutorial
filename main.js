@@ -43,3 +43,13 @@ var app = new Vue({
     }
     
 });
+Vue.component('product', {
+    template: `
+    <div></div>
+    `,
+    data(){
+        return {
+            
+        }
+    }
+})
