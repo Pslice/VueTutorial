@@ -169,4 +169,4 @@ var app = new Vue({
             this.cart.push(id);
         }
     }
-});
+});//added correct git user account
