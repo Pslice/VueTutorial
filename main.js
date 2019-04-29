@@ -173,9 +173,10 @@ Vue.component('product-tabs', {
     </div>
     `,
     data(){
-        return {
-            tabs: ['Reviews','Make a Review'],
-            selectedTab:'Reviews'
+            return {
+                tabs: ['Reviews','Make a Review'],
+                selectedTab:'Reviews'
+            }
         }
     }
 })
